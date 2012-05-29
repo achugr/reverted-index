@@ -1,4 +1,5 @@
-package ru.infos.dcn.java.Lab1;
+package ru.infos.dcn.reverted_index;
+
 
 import java.io.*;
 import java.util.HashMap;
@@ -12,19 +13,19 @@ public class RevInd implements Serializable{
     public RevInd() {
         this.defaultDirectory = "./invIndDirectory";
         if(revIndList == null)revIndList = new HashMap<String,WordsPlaceList>();
-        createORupdateIndex();
+        createOrUpdateIndex();
     }
     public RevInd(String filePath) {
         this.defaultDirectory = filePath;
         if(revIndList == null)revIndList = new HashMap<String,WordsPlaceList>();
-        createORupdateIndex();
+        createOrUpdateIndex();
     }
 
     public RevInd(HashMap<String,WordsPlaceList> revIndList) {
         this.revIndList = revIndList;
     }
 
-    public void createORupdateIndex() {
+    public void createOrUpdateIndex() {
         Scanner scanner;
         Integer placeInDocument = 0;
         String newFileList[] = new File(defaultDirectory).list();
@@ -32,7 +33,7 @@ public class RevInd implements Serializable{
         for (int i = 0; i < newFileList.length; i++) {
             if(!isFileExistInPrevIndex(newFileList[i])){//если файл в индексе, то ничего не добавляем; если пред списка нет(null), то считается, что каждого файла нет в индексе
                 try {
-                    scanner = new Scanner(new File(defaultDirectory + "\\" + newFileList[i])).useDelimiter("[.,:;()?!\"\\s]+");
+                    scanner = new Scanner(new File(defaultDirectory + File.separator + newFileList[i])).useDelimiter("[.,:;()?!\"\\s]+");
                     while (scanner.hasNext()) {
                         String str = scanner.next().toLowerCase();// поиск будет без учета регистра
                         if(str.equals("Hong"))System.out.println("~~~~~~Hong~~~~~~");

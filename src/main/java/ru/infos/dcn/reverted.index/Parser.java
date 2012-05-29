@@ -1,4 +1,4 @@
-package ru.infos.dcn.java.Lab1;
+package ru.infos.dcn.reverted_index;
 
 /* This program illustrates recursive descent parsing using a
    pure procedural approach.

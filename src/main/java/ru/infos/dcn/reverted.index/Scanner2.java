@@ -1,5 +1,4 @@
-package ru.infos.dcn.java.Lab1;
-
+package ru.infos.dcn.reverted_index;
 
 public class Scanner2 {
     private char ch = ' ';

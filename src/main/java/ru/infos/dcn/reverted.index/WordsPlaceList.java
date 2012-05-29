@@ -1,4 +1,5 @@
-package ru.infos.dcn.java.Lab1;
+package ru.infos.dcn.reverted_index;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
